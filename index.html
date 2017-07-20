@@ -1,1 +1,104 @@
-Hello world
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>わりざんのれんしゅう</title>
+    <style type="text/css">
+      body {
+      // font-family:Helvetica,Arial, Roboto, “Droid Sans”, “游ゴシック”, YuGothic,“ヒラギノ角ゴ ProN W3″,“Hiragino Kaku Gothic ProN”, “メイリオ”,Meiryo, sans-serif;
+      }
+
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      }
+      
+      input[type="number"] {
+      -moz-appearance:textfield;
+      margin: 0;
+      width: 3em;
+      maxlength: 3;
+      }
+ 
+    </style>
+    <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+
+    <script type="text/javascript"
+	    src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.10/chance.min.js">
+    </script>
+    <script src="qdiv.js">
+    </script>
+  </head>
+
+  <body>
+    <h2>わりざんのれんしゅう<hr/></h2>
+
+    <div id="elsetting" width="50px" >
+      簡単な割り算（割りきれる割り算）の練習です
+
+      <ul>
+	  <li>約300問から「問題数」に入力した数だけランダムに選択して出題します。
+	  <li>「乱数」欄が自然数なら、それを種としてランダムに選択します。<br/>
+	    同じ数なら同じ問題になります。
+	  <li>「乱数」欄が 0 なら、毎回新しい問題を選択します。
+      </ul>
+      
+      <fieldset >
+	<legend>設定</legend>
+      <form onsubmit="start()" >
+      <table>
+	<tr>
+	  <th>問題数</th>
+	  <td><input type="number" id="elcount" value="10" min="1" max="50"/>
+	  </td>
+	</tr>
+	<tr>
+	  <th>乱数</th>
+	  <td><input type="number" id="elseed" value="123" min="0" max="9999" />
+	  </td>
+	</tr>
+	<tr>
+	  <th colspan="2">
+	    <button type="submit">開始</button>
+	  </th>
+	</tr>
+      </table>
+      </form>
+    </fieldset>
+    </div>
+    
+    <div id="elmenu" style="display:none">
+      <input type="button" value="設定に戻る" onclick="showSetting()" />
+    </div>
+    
+    <div id="elquestions">
+    </div>
+    
+    <script>
+      function showSetting() {
+      elsetting.style = "display:block";
+      elmenu.style = "display:none";
+      }
+      
+      function start() {
+      elsetting.style = "display:none";
+      elmenu.style = "display:block";
+      Qdiv.init(10, 100);
+      var count = parseInt(elcount.value);
+      var seed = parseInt(elseed.value);
+      Qdiv.pickup(seed, count);
+      // Qdiv.dumpAll();
+
+      elquestions.innerHTML = Qdiv.createHtml(document);
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
