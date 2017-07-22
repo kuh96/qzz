@@ -98,7 +98,7 @@ var Qdiv = {
 		elcheck.textContent = "OK";
 		document.getElementById("soundOK").play();
 	    } else {
-		elcheck.textContent = "OK";
+		elcheck.textContent = "NG";
 		document.getElementById("soundNG").play();
 	    }
 	}

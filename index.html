@@ -73,15 +73,19 @@
       <input type="button" value="問題選択に戻る" onclick="showSetting()" />
     </div>
     
-<audio id="soundOK">
-   <source src="crrect_answer2.mp3" type="audio/mp3">
-   <p>（このブラウザでは音は鳴りません）</p>
-</audio>
-
-<audio id="soundNG">
-   <source src="blip03.mp3" type="audio/mp3">
-   <p>（このブラウザでは音は鳴りません）</p>
-</audio>
+    <audio id="soundOK">
+      <source src="crrect_answer2.mp3" type="audio/mp3">
+	<p>（このブラウザでは音は鳴りません）</p>
+    </audio>
+    <audio id="soundNG">
+      <source src="blip03.mp3" type="audio/mp3">
+    </audio>
+    <audio id="soundStart">
+      <source src="start.mp3" type="audio/mp3">
+    </audio>
+    <audio id="soundSetting">
+      <source src="setting.mp3" type="audio/mp3">
+    </audio>
 
     <hr/>
     2017/07/22 11:52
@@ -103,6 +107,7 @@
       $("#elsetting").hide();
       $("#elquestions").slideDown(800);
       $("#elmenu").show();
+      $("#soundStart").get(0).play();
 //      elsetting.style = "display:none";
 //      elmenu.style = "display:block";
       }
@@ -112,6 +117,7 @@
       $("#elsetting").slideDown(800);
       $("#elmenu").hide();
       $("#elquestions").hide();
+      $("#soundSetting").get(0).play();
 //      elsetting.style = "display:block";
 //      elmenu.style = "display:none";
       }
