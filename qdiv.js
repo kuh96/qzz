@@ -94,7 +94,13 @@ var Qdiv = {
 	    elcorrect.textContent = "";	
 	} else {
 	    elcorrect.textContent = div.correct;
-	    elcheck.textContent = (parseInt(ans) == div.correct) ? "OK" : "NG";
+	    if(parseInt(ans) == div.correct) {
+		elcheck.textContent = "OK";
+		document.getElementById("soundOK").play();
+	    } else {
+		elcheck.textContent = "OK";
+		document.getElementById("soundNG").play();
+	    }
 	}
     }
 }

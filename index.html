@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>わりざんのれんしゅう</title>
+    <title>割り算の練習</title>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     
     <style type="text/css">
@@ -9,13 +9,13 @@
       // font-family:Helvetica,Arial, Roboto, “Droid Sans”, “游ゴシック”, YuGothic,“ヒラギノ角ゴ ProN W3″,“Hiragino Kaku Gothic ProN”, “メイリオ”,Meiryo, sans-serif;
       }
 
-      input[type="number"]::-webkit-inner-spin-button,
-      input[type="number"]::-webkit-outer-spin-button {
+      input[type="number"].ans::-webkit-inner-spin-button,
+      input[type="number"].ans::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
       }
       
-      input[type="number"] {
+      input[type="number"].ans {
       -moz-appearance:textfield;
       margin: 0;
       width: 3em;
@@ -24,7 +24,9 @@
  
     </style>
     <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
-
+    <script type="text/javascript"
+	    src="https://code.jquery.com/jquery-3.2.1.min.js">
+    </script>
     <script type="text/javascript"
 	    src="https://cdnjs.cloudflare.com/ajax/libs/chance/1.0.10/chance.min.js">
     </script>
@@ -33,20 +35,19 @@
   </head>
 
   <body>
-    <h2>わりざんのれんしゅう<hr/></h2>
-
+    <h2>割り算の練習<hr/></h2>
+    
     <div id="elsetting" width="50px" >
       簡単な割り算（割りきれる割り算）の練習です
 
       <ul>
-	  <li>約300問から「問題数」に入力した数だけランダムに選択して出題します。
-	  <li>「乱数」欄が自然数なら、それを種としてランダムに選択します。<br/>
-	    同じ数なら同じ問題になります。
-	  <li>「乱数」欄が 0 なら、毎回新しい問題を選択します。
+	  <li>約300問から「問題数」に入力した数だけ選択して出題します。
+	  <li>「選択法」欄が 0 なら毎回をランダムに選択します。<br/>
+	    1 ～ 999 なら、その数に従って選択します。
       </ul>
       
-      <fieldset >
-	<legend>設定</legend>
+      <fieldset style="width: 15em;" >
+	<legend>問題選択</legend>
       <form action="javascript:void(0)" onsubmit="start(); return false;" >
       <table>
 	<tr>
@@ -55,36 +56,43 @@
 	  </td>
 	</tr>
 	<tr>
-	  <th>乱数</th>
-	  <td><input type="number" id="elseed" value="123" min="0" max="9999" />
+	  <th>選択法</th>
+	  <td><input type="number" id="elseed" value="0" min="0" max="999" />
 	  </td>
 	</tr>
-	<tr>
-	  <th colspan="2">
-	    <button type="submit">開始</button>
-	  </th>
-	</tr>
       </table>
+      <button type="submit">開始</button>
       </form>
     </fieldset>
-    </div>
-    
-    <div id="elmenu" style="display:none">
-      <input type="button" value="設定に戻る" onclick="showSetting()" />
     </div>
     
     <div id="elquestions">
     </div>
     
+    <div id="elmenu">
+      <input type="button" value="問題選択に戻る" onclick="showSetting()" />
+    </div>
+    
+<audio id="soundOK">
+   <source src="crrect_answer2.mp3" type="audio/mp3">
+   <p>（このブラウザでは音は鳴りません）</p>
+</audio>
+
+<audio id="soundNG">
+   <source src="blip03.mp3" type="audio/mp3">
+   <p>（このブラウザでは音は鳴りません）</p>
+</audio>
+
+    <hr/>
+    2017/07/22 11:52
+
     <script>
-      function showSetting() {
-      elsetting.style = "display:block";
-      elmenu.style = "display:none";
-      }
+      $("#elsetting").show();
+      $("#elmenu").hide();
+      $("#elquestions").hide();
       
+      // 問題を作成・表示
       function start() {
-      elsetting.style = "display:none";
-      elmenu.style = "display:block";
       Qdiv.init(10, 100);
       var count = parseInt(elcount.value);
       var seed = parseInt(elseed.value);
@@ -92,7 +100,22 @@
       // Qdiv.dumpAll();
 
       elquestions.innerHTML = Qdiv.createHtml(document);
+      $("#elsetting").hide();
+      $("#elquestions").slideDown(800);
+      $("#elmenu").show();
+//      elsetting.style = "display:none";
+//      elmenu.style = "display:block";
       }
+
+      // 問題設定を表示
+      function showSetting() {
+      $("#elsetting").slideDown(800);
+      $("#elmenu").hide();
+      $("#elquestions").hide();
+//      elsetting.style = "display:block";
+//      elmenu.style = "display:none";
+      }
+      
     </script>
   </body>
 </html>
