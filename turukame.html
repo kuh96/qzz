@@ -1,0 +1,157 @@
+<html>
+  <head>
+    <title>つるかめ算</title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+      td {
+      text-align: right;
+      width: 2em;
+      }
+    </style>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+    </script>
+    <script type="text/javascript"
+	    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+
+  </head>
+  <body>
+    <h2>つるかめ算<hr/></h2>
+
+    つるかめ算をいろいろな考え方で解いてみましょう。
+
+    <p/>
+    <fieldset style="width:35em;" >
+      <legend>問題</legend>
+
+      ツルとカメが合わせて 10 匹いました。
+      足の数は合わせて 24 本でした。<br/>
+      ツルとカメはそれぞれ何匹でしょう？
+    </fieldset>
+
+    <h3>●（中二）連立方程式</h3>
+
+    ツルの数を $x$ 匹、カメの数を $y$ 匹として、連立方程式を作って解いてみましょう。
+    
+
+    <h3>●（中一）（連立でない）方程式</h3>
+
+    ツルの数を $x$ 匹として、（連立でない）方程式を作って解いてみましょう。
+    
+    
+    <h3>● 表を使う</h3>
+
+    以下のような表を作って、解いてみましょう。
+    <p/>
+
+    <table border="1">
+      <tr bgcolor="yellow">
+	<th>ツルの数</th>
+	<td>0</td>
+	<td>1</td>
+	<td>2</td>
+	<td>3</td>
+	<td>4</td>
+	<td>5</td>
+	<td>6</td>
+	<td>7</td>
+	<td>8</td>
+	<td>9</td>
+	<td>10</td>
+      </tr>
+      <tr>
+	<th>カメの数</th>
+	<td>10</td>
+	<td>9</td>
+	<td>8</td>
+	<td>7</td>
+	<td>6</td>
+	<td>5</td>
+	<td>4</td>
+	<td>3</td>
+	<td>2</td>
+	<td>1</td>
+	<td>0</td>
+      </tr>
+      <tr bgcolor="yellow">
+	<th>ツルの足の数</th>
+	<td></td> 
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+      </tr>
+      <tr>
+	<th>カメの足の数</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+      </tr>
+      <!--
+      <tr bgcolor="lightgreen" >
+	<th>足の数の合計</th>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+      </tr>
+      -->
+      
+      <tr bgcolor="lightgreen">
+	<th>足の数の合計</th>
+	<td>40</td>
+	<td>38</td>
+	<td>36</td>
+	<td>34</td>
+	<td>32</td>
+	<td>30</td>
+	<td>28</td>
+	<td>26</td>
+	<td>24</td>
+	<td>22</td>
+	<td>20</td>
+      </tr>
+    </table>
+
+    <h3>● 規則性を見つける</h3>
+
+    上の<b>「表を使う」</b>やり方だと、合わせて 1000 匹などだと大変そうです。<br/>
+    上の表から、何か<b>「規則性」</b>　が見つかりませんか？<br/>
+    この規則性を使って問題を解いてみましょう。
+
+    <p/>
+    <i>（表やグラフは規則性を見つけるのにとても役立ちます）</i>
+
+    <h3>● つるへび算</h3>
+
+    ツルとヘビが合わせて 10 匹、足の数が合計 14 本、なら簡単ですね。
+    <br/>
+    この考え方をつるかめ算に使えないでしょうか？
+
+  </body>
+</html>
