@@ -4,14 +4,19 @@
     <meta charset="utf-8" />
 
     <style type="text/css">
-      td {
-      text-align: right;
-      width: 2em;
-      }
+      .break { page-break-before: always; }
+
+      h1, h2 {border-bottom: solid 3px; width:500px; }
     </style>
 
     <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+      MathJax.Hub.Config({
+      displayAlign: "left",
+      displayIndent: "1em",
+      tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
+      TeX: { TagSide: "left",
+      equationNumbers: { autoNumber: "AMS" } }
+      });
     </script>
     <script type="text/javascript"
 	    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
@@ -19,31 +24,185 @@
     <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
 
   </head>
-  <body style="width:25em;">
-    <h2>いろいろな計算<hr/></h2>
+  <body>
 
-    <h3>以下を暗算で求めなさい</h3>
+    <h2>いろいろな計算
+    </h2>
+    
+    ぎょっとするかもしれないけど、中一の知識で解けるのですよ。<br/>
+    ただし知識を使いこなさないといけません。
 
-     $$1 + 2 + \cdots + 99 + 100$$
+    <h3>以下を求めなさい</h3>
+
+    \begin{equation}
+    1 + 2 + 3 + \cdots + 99 + 100
+    \end{equation}
+
+    \begin{equation}
+    1 + 2 + 3 + \cdots + 999 + 1000
+    \end{equation}
+
+    \begin{equation}
+    51 + 52 + 53 + \cdots + 99 + 100
+    \end{equation}
 
     <h3>以下を簡単にしなさい</h3>
 
-    $$\frac{1}{1 + \frac{1}{1 + \frac{1}{x}}}$$
+    \begin{equation}
+    \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{x}}}
+    \end{equation}
     
-
     <h3>以下の方程式を解きなさい</h3>
 
-    (1)
-    $$ \frac{1}{x - 4} + \frac{2}{x - 1} = 0$$
-
-    <p/>
-    (2)
-    $$x - 2 + (x + 5) = 2x + 3$$
-
-    <p/>
-    (3)
-    $$\frac{1}{x - 3} - \frac{1}{x - 2} = 0$$
+    \begin{equation}
+    \frac{1}{x - 4} + \frac{2}{x - 1} = 0
+    \end{equation}
     
+    \begin{equation}
+    \frac{1}{x - 3} - \frac{1}{x - 2} = 0
+    \end{equation}
 
+    \begin{equation}
+    x - 2 + (x + 5) = 2x + 3
+    \end{equation}
+
+    <h2 class="break">解説
+    </h2>
+
+    <h3>(1)</h3>
+
+    高２くらいの「数列」で習う問題ですが簡単です。
+    <p/>
+    足し算は順序をかえて足してもよいので、
+
+    $$
+    1 + 2 + 3 + \cdots + 99 + 100 \\
+    = (1 + 100) + (2 + 99) + .... (50 + 51) \\
+    = \underbrace{101 + 101 + ... + 101}_{50個} \\
+    = 101 \times 50 \\
+    = 5050
+    $$
+
+    <h4><u>もっと良い方法</u></h4>
+
+    答を $x$ とします。すると
+
+    $$
+    \left\{
+    \begin{array}{cccccccccccc}
+    x &= &1   &+ &2  &+ &3  &+ &\cdots &+ &99 &+ &100　\\
+    x &= &100 &+ &99 &+ &98 &+ &\cdots &+ &2 &+ &1 \\
+    \end{array}
+    \right.
+    $$
+    
+    <b>等式の変形</b> をつかって、上の左辺同士、右辺同士を足すと
+
+    \begin{array}{cccccccccccc}
+    2x &= &101 &+ &101 &+ &101 &+ &\cdots &+ &101 &+ &101  \\
+    2x &= &101 &\times &100 \\
+    x &= &101 &\times &50 &= 5050 \\
+    \end{array}
+
+
+    一般に
+    $$
+    1 + 2 + 3 + \cdots + (n - 1) + n = \cfrac{1}{2} n (n + 1)
+    $$
+    でも、こんな公式は忘れてもすぐ自分で導けるようになってください。
+    
+    <h3>(2)</h3>
+
+    (1) と同様にして
+    $1001 \times 500 = 500500$
+
+    <h3>(3)</h3>
+
+    $1 + 2 + \cdots + 99 + 100 = 101 \times 50 = 5050$ から<br>
+    $1 + 2 + \cdots + 49 + 50 = 51 \times 50 = 1275$ を引いて<br>
+    $3775$
+    
+    <p/>
+    あるいは
+    \begin{array}{cccccccccccc}
+       &x &= &51   &+ &52  &+ &\cdots &+ &99 &+ &100　\\
+    +) &x &= &100 &+ &99 &+ &\cdots &+ &52 &+ &51 \\
+    \hline
+       &2x &= &151  &+ &151  &+ &\cdots &+ &151 &+ &151　\\
+       &2x &= &151 &\times &50 \\
+       & x &= &151 &\times &25 &= 3775 \\
+    \end{array}
+
+    <h3>(4)</h3>
+
+    通分と同じで、 分母を消すように $1 = \cfrac{a}{a}$ をかけていきます。
+
+    \begin{array}{cccccccccccc}
+     & \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{x}}} 
+    =& \cfrac{1}{1 + \cfrac{1}{1 + \cfrac{1}{x}} \times \cfrac{x}{x}}
+    =& \cfrac{1}{1 + \cfrac{x}{(1 + \cfrac{1}{x}) x}} 
+    =& \cfrac{1}{1 + \cfrac{x}{x + 1}} \\
+    =& \cfrac{1}{1 + \cfrac{x}{x + 1}} \times \cfrac{x+1}{x+1}
+    =& \cfrac{x + 1}{(1 + \cfrac{x}{x + 1}) (x + 1)}
+    =& \cfrac{x + 1}{(x + 1) + x}
+    =& \cfrac{x + 1}{2x + 1}
+    \end{array}
+
+    このようなへんな分数を <b>連分数</b> といいますが、中学・高校では
+    出てきません（大学でも？）。
+
+    <h3>(5)</h3>
+
+    <ul>
+      <li>(5)(6)は分母に未知数が入ってますが、あわてず騒がず「通分」すればよいのです。
+      <li>等式なので、分母をなくすように両辺に同じ数式をかけるだけです。
+      <li>なお右辺が 0 でない場合は、二次方程式（中3）になります。
+    </ul>
+
+    \begin{array}{ll}
+    (\cfrac{1}{x-4} + \cfrac{2}{x-1}) (x-4)(x-1) = 0 \times (x-4)(x-1)
+    & \small{両辺に (x-4)(x-1) をかける} \\
+     \cfrac{1}{x-4}(x-4)(x-1) + \cfrac{2}{x-1}(x-4)(x-1) = 0 
+    & \small{左辺を分配法則で展開} \\
+     (x-1) + 2(x-4) = 0 
+    & \small{各項のかけ算を実行すると分母が消える} \\
+     3x - 9 = 0 \\
+     x = 3 
+    \end{array}
+    
+    <h3>(6)</h3>
+    
+    $$
+    \frac{1}{x - 3} - \frac{1}{x - 2} = 0
+    $$
+
+    同様に、両辺に $(x-2)(x-3)$ をかけると
+    $$
+    (x-2) - (x-3) = 0 \\
+    x-2 - x+3 = 0 \\
+    1 = 0 \ ??? \\
+    $$
+    
+    $x$ がなくなって、$1=0$ という変な結果が出てきたが、<br>
+    これはもとの方程式が矛盾していた、そんな $x$ はない、ということ。
+    <p/>
+    <b>答はない</b> が答 （不能、といったりします）
+
+    <h3>(7)</h3>
+    $$
+    x - 2 + (x + 5) = 2x + 3 \\
+    2x  + 3 = 2x + 3 \\
+    0 = 0 \\
+    $$
+
+    $x$ がなくなって、こんどは　$0=0$ という正しい等式になった。
+    これは $x$ は何でもよい、ということ。
+
+    <p/>
+    $x =$ <b>任意の数</b> が答 （不定、といったりします）
+    <p/>
+    なぜ、不能、不定のようなへんな場合が起こるかは、一次関数とグラフ
+    を勉強すれば分かると思います。
+    
   </body>
 </html>
