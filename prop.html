@@ -1,0 +1,155 @@
+<html>
+  <head>
+    <title>数と計算の性質</title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+      .break { page-break-before: always; }
+
+      h1, h2 {border-bottom: solid 3px; width:500px; }
+      
+    </style>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      displayAlign: "left",
+      displayIndent: "1em",
+      tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] },
+      TeX: { TagSide: "left",
+      equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script type="text/javascript"
+	    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+    <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />
+
+  </head>
+
+  <body>
+    <h2>数と計算の性質</h2>
+
+    以下 a,b,c ... は、任意の数や数式、数の代わりをする文字、文字式を表します。
+
+    <h3>結合法則</h3>
+
+    \begin{array}{ll}
+      a + (b + c) = (a + b) + c &
+        \small{たし算はどこから計算してもよい} \\
+      a(bc) = (ab)c &
+        \small{かけ算はどこから計算してもよい} \\
+    \end{array}
+    
+    このため足し算が続くとき、かけ算が続くときは、カッコをつけなくてもよい（通常つけない）
+    <p/>
+    
+    $$
+    \mathbf{例} \\
+    \small{
+    2 + (3 + 5) = (2 + 3) + 5 = 2 + 3 + 5 = 10 \\
+    2 \times (3 \times 5) = (2 \times 3) \times 5 = 2 \times 3 \times 5 = 30\\
+    }
+    $$
+
+    <h3>交換法則</h3>
+    
+    \begin{array}{ll}
+      a + b = b + a &
+        \small{たされる数とたす数をいれかてもよい} \\
+      ab = ba &
+        \small{かけられる数とかける数をいれかてもよい} \\
+    \end{array}
+
+    $$
+    \mathbf{例} \\
+    \small{
+    2 + 3  = 3 + 2 = 5  \\
+    1 + 7 + 9 + 3 = 1 + 9 + 7 + 3 = (1+9)+(7+3) = 10 + 10 = 20  \\
+    2 \times 3 = 3 \times 2 = 6  \\
+    25 \times 39 \times 4 = 4 \times 25 \times 39 =
+       (4 \times 25) \times 39 = 100 \times 39 = 3900  \\
+    }
+    $$
+
+    <h3>分配法則</h3>
+    
+    \begin{array}{ll} 
+      a(b + c) &= ab + ac &  \\
+    (b + c)a &= ba + ca &   \\
+    \end{array}
+    
+    <ul>
+      <li>左から右の形にする ～ 展開する、かっこをはずす、などという
+      <li>右から左の形にする ～ （共通因子 $a$ で）くくる・まとめる、などという
+    </ul>
+
+    $$
+    \mathbf{例} \\
+    \small{
+    3 (5 + 10) = 3 \times 5 + 3 \times 10 = 45 \\
+    -3 (5 - 10) = -3 \times 5 + (-3) \times (-10) = 15 \\
+    }
+    $$
+
+    <h3>何もしない 0 と 1</h3>
+
+    \begin{array}{ll}
+    a + 0 = 0 + a = a &  \small{0 \ を足しても変わらない} \\
+    1a = a \times 1 = a &  \small{1 \ をかけても変わらない} \\
+    \end{array}
+
+    <h3>逆の計算をする数</h3>
+
+    \begin{array}{ll}
+    a + (-a) = (-a) + a = 0 & \small{元の数と符号を変えた数をたすと \ 0 } \\
+    a \times \cfrac{1}{a} = \cfrac{1}{a} \times a = 1 & \small{元の数とその逆数をかけると \ 1} 
+    \end{array}
+    
+    $$
+    \mathbf{例} \\
+    \small{
+    5 + (-5) = 0 \\
+    -(239 - 321) + 239 - 321 = 0 \\
+    39 \times \cfrac{1}{39} = 1  \\
+    \cfrac{239 - 321}{\cfrac(239 - 321)} = 1 
+    }
+    $$
+
+    <h3>ひき算とわり算</h3>
+
+    \begin{array}{ll}
+    a - b = a + (-b) &
+       \small{ある数をひく、はその符号を変えた数をたすのと同じ} \\
+    a \div b = a \times \cfrac{1}{b} = \cfrac{a}{b} &
+       \small{ある数でわる、はその逆数をかけるのと同じ} \\
+    \end{array}
+
+    特に
+    
+    \begin{array}{ll}
+    a - a = a + (-a) =  0 &
+    　　\small{ある数から同じ数をひくと \ 0 } \\
+    a \div a = \cfrac{a}{a} = 1 &
+    　　\small{ある数を同じ数でわると \ 1} 
+    \end{array}
+    
+    <h2>等式の性質</h2>
+
+    $A = B$ ならば
+
+    \begin{array}{ll}
+      B = A & \small{左辺と右辺をいれかえても等しい} \\
+      A + a = B + a & \small{各辺に同じ数を足しても等しい} \\
+      A - a = B - a & \small{各辺から同じ数をひしても等しい} \\
+      aA = aB & \small{各辺に同じ数をかけても等しい} \\
+      \cfrac{A}{a} = \cfrac{B}{a} & 
+	\small{各辺を同じ数でわっても等しい(ただし a \neq 0)}
+    \end{array}
+
+  </body>
+</html>
+
+    
+
+    
+    
